@@ -7,5 +7,6 @@ int main() {
   cout << "hello world !";
   cout << "Hello DSA WORLD";
   int a=5;
+  // why new lin eis not good 
   return 0;
 }
