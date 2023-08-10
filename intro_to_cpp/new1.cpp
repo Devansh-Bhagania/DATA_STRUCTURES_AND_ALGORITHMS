@@ -7,5 +7,7 @@ int main() {
   int myNum;
 myNum = 15;
 cout << myNum;
+int d = 56;
+int j = 78;
   return 0;
 }
