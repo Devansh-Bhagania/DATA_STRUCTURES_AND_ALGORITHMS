@@ -9,5 +9,6 @@ myNum = 15;
 cout << myNum;
 int d = 56;
 int j = 78;
+// exam day no work done 
   return 0;
 }
