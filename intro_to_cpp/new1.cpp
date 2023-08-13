@@ -13,5 +13,6 @@ int j = 78;
 // tomorrow new work and new chapter 
 // tomorroe we will start dsa all the best 
 // netflix clone will also be started tomorrow 8 pm 
-  return 0;
+// might have to make a discord channel to pratice dsa online 
+return 0;
 }
