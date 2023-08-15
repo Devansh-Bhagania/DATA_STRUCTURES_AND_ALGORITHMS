@@ -15,5 +15,6 @@ int j = 78;
 // netflix clone will also be started tomorrow 8 pm 
 // might have to make a discord channel to pratice dsa online 
 // today jannat travels is completed and revised next js also started typescript videos 
+// ohhh jkn 
 return 0;
 }
