@@ -3,24 +3,29 @@
 #include <typeinfo>
 using namespace std;
 
-class MyClass {       
+class Mydata {       
   public:             
     int RollNo;        
     string Name;  
     string University;
 };
 
+void print(Mydata student){
+    cout<<student.RollNo<<endl;
+    cout<< student.Name<<endl;
+    cout<<student.University<<endl;
+    
+}
+
 int main() {
-  MyClass myObj;  
+  Mydata student;  
 
   
-  myObj.RollNo = 259; 
-  myObj.Name = "Devansh";
-  myObj.University="Chitkara";
-
+  student.RollNo = 259; 
+  student.Name = "Devansh Bhagania";
+  student.University="Chitkara";
+    print(student);
  
-  cout << myObj.RollNo << "\n";
-  cout << myObj.Name<< "\n";
-  cout << myObj.University << "\n";
+  
   return 0;
 }
