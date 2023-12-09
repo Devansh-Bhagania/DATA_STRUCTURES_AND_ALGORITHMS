@@ -13,6 +13,7 @@ public:
       for(int i =0;i<n;i++) {
         
         temp[(i+k)%n] = nums[i];
+        // temp[(i+k)%n] = nums[i];
         
       }
       
