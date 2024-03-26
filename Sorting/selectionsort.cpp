@@ -34,3 +34,6 @@ int main(){
     }
     return 0;
 }
+
+
+// time complexity is 0(n^2) 
