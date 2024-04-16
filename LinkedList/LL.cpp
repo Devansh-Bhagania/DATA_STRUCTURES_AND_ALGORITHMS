@@ -45,6 +45,7 @@ int checkIfElementPresent(Node* head,int val){
     return 0;
 }
 
+
 int main(){
     vector<int> arr = {2,5,8,7};
     // Node* y = new Node(arr[0],nullptr);
