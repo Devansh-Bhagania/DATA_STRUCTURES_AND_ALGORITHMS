@@ -130,6 +130,54 @@ Node* removel(Node* head,int el){
 }
 
 
+// insert at head -------------------
+
+Node* insertAtHead(Node* head, int val){
+    Node* temp = new Node(val);
+    temp->next = head;
+    return temp;
+}
+
+
+Node* insertAtTail(Node* head, int val){
+    if (head== NULL) return new Node(val);
+    Node* rte = new Node(val);
+    Node* temp = head;
+  
+        while(temp->next != NULL){
+             temp = temp->next;
+        };
+        temp->next = rte;
+      return head;
+}
+
+Node* insertAtK(Node* head, int el,int val){
+        if(head == NULL){
+           return head;
+        }
+        if(head->data == val){
+            return new Node(el);
+        }
+
+        Node* temp = head;
+        while(temp->next != NULL){
+     
+                if(temp->next->data == val){
+                    Node* fe = new Node(el);
+                    fe->next = temp->next;
+                    temp->next = fe;
+                    break;
+                }
+                temp = temp->next;
+        }
+        return head;
+
+}
+
+
+Node* insertBeforeValue(Node* head, int el, )
+
+
 int main(){
     vector<int> arr = {2,5,8,7};
     // Node* y = new Node(arr[0],nullptr);
@@ -146,7 +194,11 @@ int main(){
     // head = removesHead(head);
     print(head);
     // head = removeK(head,3);
-    head = removel(head,5);
+    // head = removel(head,5);
     // head = removeTail(head);
+
+    // head =  insertAtTail(head,45);
+
+    head = insertAtK(head, 56, 2);
     print(head);
 }
