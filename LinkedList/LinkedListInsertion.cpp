@@ -175,7 +175,24 @@ Node* insertAtK(Node* head, int el,int val){
 }
 
 
-Node* insertBeforeValue(Node* head, int el, )
+// Node* insertBeforeValue(Node* head, int el, )
+
+
+
+ ListNode* reverseList(ListNode* head) {
+        ListNode* prev = nullptr;
+        ListNode* current = head;
+        ListNode* nextNode = head;
+
+        while(current){
+            nextNode = current->next;
+            current->next = prev;
+            prev = current;
+            current = nextNode;
+        }
+
+        return prev;
+    }
 
 
 int main(){

@@ -25,6 +25,24 @@ class Node{
 };
 
 
+Node* reverseDLL(Node* head){
+    if(head == NULL || head->next == NULL){
+        return head;
+    }
+
+    Node* prev  = NULL;
+    Node* current = head ;
+    while(current != NULL){
+        prev = current->prev;
+        current->prev = current->next;
+        current->next= prev;
+
+        current = current-> prev;
+    }
+    return prev->prev;
+}
+
+
 Node* convertArr2Dll(vector<int> &arr){
     Node* head = new Node(arr[0]);
     Node* prev = head;
@@ -69,6 +87,42 @@ Node* deleteTail(Node* head){
     newTail->next= nullptr;
     tail->back = nullptr;
     delete tail;
+    return head;
+}
+
+Node removeKthElement(Node* head,int k){
+    if(head == NULL){
+        return NULL;
+    }
+
+    int cnt = 0;
+    Node* kNode = head;
+
+    while(kNode != NULL){
+        cnt++;
+        if(cnt == k) break;
+        kNode = kNode->next;
+    }
+
+    Node* prev = kNode->back;
+    Node* front =kNode->next;
+
+    if(prev == NULL && front == NULL){
+        return NULL;
+    }
+    else if(prev == NULL){
+        return deleteHead(head);
+    }
+    else if(front==NULL){
+        return deleteTail(head);
+    }
+
+    prev->next = front;
+    front->back = prev;
+
+    kNode->next = nullptr;
+    kNode->back = nullptr;
+    delete kNode;
     return head;
 }
 
