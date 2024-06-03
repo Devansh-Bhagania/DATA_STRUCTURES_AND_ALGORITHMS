@@ -1,29 +1,33 @@
 #include <iostream>
 #include <vector>
-#include <stack>
+#include <algorithm> // For std::min
 
-using namespace std;
-
-int largestRectangleArea(vector<int>& heights) {
-    stack<int> st;
+// Function to calculate the largest rectangle area in a histogram
+int largestRectangleArea(const std::vector<int>& heights) {
     int maxArea = 0;
     int n = heights.size();
-
-    for (int i = 0; i <= n; ++i) {
-        while (!st.empty() && (i == n || heights[i] < heights[st.top()])) {
-            int height = heights[st.top()];
-            st.pop();
-            int width = st.empty() ? i : i - st.top() - 1;
-            maxArea = max(maxArea, height * width);
+    
+    // Iterate through each bar
+    for (int i = 0; i < n; ++i) {
+        int minHeight = heights[i];
+        
+        // Expand the rectangle to the right
+        for (int j = i; j < n; ++j) {
+            minHeight = std::min(minHeight, heights[j]);
+            int width = j - i + 1;
+            int area = minHeight * width;
+            maxArea = std::max(maxArea, area);
         }
-        st.push(i);
     }
-
+    
     return maxArea;
 }
 
 int main() {
-    vector<int> heights = {2, 1, 5, 6, 2, 3};
-    cout << "Largest Rectangle Area: " << largestRectangleArea(heights) << endl;
+    std::vector<int> heights = {2, 1, 5, 6, 2, 3};
+    int maxArea = largestRectangleArea(heights);
+    
+    std::cout << "Largest rectangle area: " << maxArea << std::endl;
+    
     return 0;
 }
