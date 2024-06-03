@@ -13,3 +13,15 @@ public:
         recursion(root->left,level+1,res);
     }
 };
+
+
+
+vector<int> ans;
+recursion (root,0,res);
+
+if(root == NULL) return;
+
+if(res.size() == level) res.push_back(node->val);
+
+recusion(root->left, level+1,res)
+recusion (root->right,level_1, res);

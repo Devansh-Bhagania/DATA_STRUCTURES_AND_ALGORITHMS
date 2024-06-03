@@ -83,6 +83,39 @@ public:
     }
 };
 
+
+vector<int> topView(node*root){
+
+        vector<int> ans;
+
+        queue<pair<node*,int>> q;
+
+        map<int , int> mpp;
+
+        q.push({root,0});
+        while(!q.empty()){
+            auto it = q.front();
+            q.pop();
+            node* node = it.first;
+            int line = it.second;
+
+            // if(map.find(line) == mpp.end()){
+                mpp[line] = node->data;
+            // }
+
+            if(node->left){
+                q.push({node->left,line-1});
+            }
+            if(node->right){
+                q.push({node->right,line+1});
+            }
+        }
+        for(auto it: mpp){
+            ans.push_back(it.second;)
+        }
+
+}
+
 int main() {
     // Creating a sample binary tree
     Node* root = new Node(1);

@@ -219,3 +219,118 @@ int main(){
     head = insertAtK(head, 56, 2);
     print(head);
 }
+
+
+
+// Node* convertFromArr(vector<int> &A){
+//         Node* head = new Node(A[0]);
+
+//         Node* mover = head;
+//         for(int i=1; i<A.size();i++){
+//             Node* temp = new Node(A[i]);
+//             mover->next = temp;
+//             mover = temp;
+//         }
+//     return head;
+// }
+
+
+// bool checkIfElementPresen(Node* head){
+//     Node* temp = head;
+
+//     while(temp != NULL){
+//         if(temp->data = key){
+//             return true;
+//         }
+//         temp = temp->next;
+//     }
+//     return false;
+// }
+
+
+// void print(Node* head){
+//     while(head != NULL){
+//         cout<<head->data<<" ";
+//         head = head->next;
+//     }
+// }
+
+// Node* removeHead(Node* head){
+//     Node* temp = head;
+//     head = head->next;
+//     delete temp;
+//     reutrn head;
+// }
+
+// Node* removeTail(Node* head){
+//     if(head == NULL || head->next == NULL) return NULL;
+//     Node* temp = head;
+
+//     while(temp->next->next != NULL){
+//         temp = temp->next;
+//     }
+
+//     temp->next = nullptr;
+//     return head;
+// }
+
+
+
+Node* insertatK(Node* head , int el , int val){
+
+
+    if( head = NULL){
+        return head;
+    }
+
+    if( head->data == val){
+        return new Node(el)
+    }
+
+    Node* temp = head;
+
+    while(temp->next != NULL){
+        
+        if(temp->next->data == val){
+            Node* fe = new Node(el);
+            fe->next = temp->next;
+            temp->next = fe;
+            break;
+        }
+        temp = temp->next;
+
+    }
+    return head;
+}
+
+
+Node* removeK(Node* head, int el, int val){
+    if(head ==NULL){
+        return head;
+    }
+
+    if(k==1){
+        Node* temp = head;
+        head = head->next;
+        return head
+        delete temp;
+    }
+
+
+    Node* temp = head;
+    Node* prev = NULL;
+
+    int count =0;
+    while(temp->next != NULL){
+        count++;
+        if( count == k){
+            prev->next = temp->next->next;
+            delete temp;
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+
+    }
+    return head;
+}
